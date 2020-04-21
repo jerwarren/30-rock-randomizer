@@ -9,6 +9,9 @@
     var item = episodes[Math.floor(Math.random()*episodes.length)];
 
     //window.location.href = "https://www.hulu.com"+item;
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    };
     </script>
   </body>
 </html>
