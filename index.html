@@ -32,8 +32,14 @@
       url = document.querySelector("#url");
       url.innerHTML = window.location.href;
       
-      if (window.location.search == "?app=true")
-      window.location.href = "https://www.hulu.com"+item;
+      if (window.location.search == "?app=true"){
+        var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+        if (iOS){
+          window.location.href = "hulu://www.hulu.com"+item;
+        } else {
+          window.location.href = "https://www.hulu.com"+item;
+        }
+      }
     
       if('serviceWorker' in navigator) {
       navigator.serviceWorker.register('sw.js');
