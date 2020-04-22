@@ -3,11 +3,9 @@
     <title>30 Rock Randomizer</title>
     <link rel="manifest" href="manifest.json">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="apple-touch-icon" href="30-rock-splash.png">
+    <link rel="apple-touch-icon" href="30-rock-icon.png">
     <link rel="apple-touch-startup-image" href="30-rock-splash.png">
     <meta name="apple-mobile-web-app-capable" content="yes">
-
-
   </head>
   <body>
     <h1>30 Rock Randomizer</h1>
@@ -38,7 +36,8 @@
     <h3>Chrome</h3>
     <img src="chrome.jpg">
     
-    <script>         
+    <script>   
+
       if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream){
         selector = document.querySelector("fieldset");
         selector.setAttribute("style","display:none");
@@ -56,8 +55,7 @@
           selector.setAttribute("style","display:block");
         }
       } else {
-        selector = document.querySelector("fieldset");
-        selector.setAttribute("style","display:none");
+        console.log("not in app");
       }
     
       if('serviceWorker' in navigator) {
