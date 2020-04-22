@@ -20,16 +20,19 @@
       var item = episodes[Math.floor(Math.random()*episodes.length)];
     
       redirectUrl = "https://www.hulu.com"+item;
-      link = document.querySelector("#link");
-      link.href = redirectUrl;
+      
       
       if (window.location.search == "?app=true"){
         if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream){
-          window.location.href = "hulu://www.hulu.com"+item;
+          redirectUrl = "hulu://www.hulu.com"+item;
         } else {
-          window.location.href = "https://www.hulu.com"+item;
+          redirectUrl = "https://www.hulu.com"+item;
         }
+        window.location.href = redirectUrl;
       }
+      
+      link = document.querySelector("#link");
+      link.href = redirectUrl;
     
       if('serviceWorker' in navigator) {
       navigator.serviceWorker.register('sw.js');
