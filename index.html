@@ -31,7 +31,6 @@
     
     <script>         
       if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream){
-        redirectUrl = "unsupported.html";
         selector = document.querySelector("fieldset");
         selector.setAttribute("style","display:none");
         document.querySelector("#prime").setAttribute("checked","checked");
@@ -39,7 +38,7 @@
       }
       
       if (window.location.search == "?app=true"){
-        fetchEpisode(source);
+        fetchEpisodes(source);
       }
     
       if('serviceWorker' in navigator) {
