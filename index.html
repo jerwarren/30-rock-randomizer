@@ -65,8 +65,12 @@
         } else {
           source = localStorage.getItem("source");
         }
-        
         return source;
+      }
+      function fetchEpisodes(source){
+        fetch(source+'.json')
+      .then(response => response.json())
+      .then(episodes => console.log(episodes);
       }
     </script>
   </body>
