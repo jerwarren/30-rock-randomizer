@@ -9,6 +9,11 @@
     <meta name="theme-color" content="#000000">
   </head>
   <body>
+    <script>
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js?x');
+      }
+    </script>
     <style>
       img {
         max-width: 100%;
