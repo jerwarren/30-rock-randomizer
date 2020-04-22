@@ -16,13 +16,13 @@
              name = "source"
              id = "hulu"
              value = "hulu"
-             onchange = "setSource()" />
+             onchange = "setSource('hulu')" />
       <label for = "hulu">Hulu</label>
       <input type = "radio"
              name = "source"
              id = "prime"
              value = "prime"
-              onchange = "setSource()" />
+              onchange = "setSource('prime')" />
       <label for = "prime">Amazon Prime Video</label>
     </fieldset>
     <br><br>
@@ -34,18 +34,21 @@
         selector = document.querySelector("fieldset");
         selector.setAttribute("style","display:none");
         document.querySelector("#prime").setAttribute("checked","checked");
-        source = setSource();
+        source = setSource("hulu");
       }
       
       if (window.location.search == "?app=true"){
-        fetchEpisodes(source);
+        if (!localStorage.getItem("source") === null){
+          source = localStorage.getItem("source");
+          fetchEpisodes(source);
+        }
       }
     
       if('serviceWorker' in navigator) {
         navigator.serviceWorker.register('sw.js');
       }
       
-      function setSource() {
+      function setSource(source) {
         if (localStorage.getItem("source") === null){
           source = document.querySelector("[checked]").getAttribute("value");
           localStorage.setItem("source",source);
