@@ -10,8 +10,8 @@
 
   </head>
   <body>
-    <h1>30 Rock Randomizer</h1>
-    You can "install" this page as an app in Chrome, Edge, Firefox or Android to enable automatic redirection to a random episode.
+    <h1>30 Rock on Hulu Randomizer</h1>
+    You can "install" this page as an app in Chrome, Edge, Firefox or on Android to enable automatic redirection to a random episode.
     
     <br><br>
     <a id="link" href="">Take me to a random episode</a>
@@ -23,7 +23,8 @@
       redirectUrl = "https://www.hulu.com"+item;
      
       if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream){
-        redirectUrl = "hulu://www.hulu.com"+item;
+        redirectUrl = "unsupported.html";
+        window.location.href = redirectUrl;
       } else {
         redirectUrl = "https://www.hulu.com"+item;
       }
