@@ -1,7 +1,7 @@
 {
   "name": "30 Rock Randomizer",
   "short_name": "30 Rock",
-  "start_url": "https://jerwarren.github.io/30-rock-randomizer/?app=true",
+  "start_url": "app.html",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color":"#000000",
