@@ -1,7 +1,7 @@
 {
   "name": "30 Rock Randomizer",
   "short_name": "30 Rock",
-  "start_url": "/",
+  "start_url": "30-rock-randomizer/",
   "display": "standalone",
   "theme_color": "#ffffff",
   "background_color":"#ffffff",
