@@ -16,7 +16,6 @@
              name = "source"
              id = "hulu"
              value = "hulu"
-             checked = "checked"
              onchange = "setSource()" />
       <label for = "hulu">Hulu</label>
       <input type = "radio"
@@ -61,7 +60,7 @@
     };
       function setSource() {
         if (localStorage.getItem("source") === null){
-          source = document.querySelector("[checked]").getAttribute("checked");
+          source = document.querySelector("[checked]").getAttribute("value");
           localStorage.setItem("source",source);
         } else {
           source = localStorage.getItem("source");
