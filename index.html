@@ -43,7 +43,13 @@
      
       if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream){
         redirectUrl = "unsupported.html";
-        window.location.href = redirectUrl;
+        selector = document.querySelector("fieldset");
+        selector.setAttribute("style","display:none");
+        document.querySelector("#prime").setAttribute("checked","checked");
+        source = setSource();
+        
+        
+        //window.location.href = redirectUrl;
       } else {
         redirectUrl = "https://www.hulu.com"+item;
       }
@@ -56,8 +62,9 @@
       link.href = redirectUrl;
     
       if('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('sw.js');
-    };
+        navigator.serviceWorker.register('sw.js');
+      }
+      
       function setSource() {
         if (localStorage.getItem("source") === null){
           source = document.querySelector("[checked]").getAttribute("value");
@@ -67,10 +74,25 @@
         }
         return source;
       }
+      
       function fetchEpisodes(source){
         fetch(source+'.json')
-      .then(response => response.json())
-      .then(episodes => console.log(episodes));
+        .then(response => response.json())
+        .then(episodes => 
+        console.log(episodes);
+        switch(source) {
+          case "hulu":
+            prefix = "https://www.hulu.com/watch/";
+            break;
+          case "prime":
+            prefix = "https://watch.amazon.com/watch?asin=";
+            break;
+        }
+        
+        item = episodes[Math.floor(Math.random()*episodes.length)];
+        redirectUrl = prefix+item;
+        console.log(redirectUrl);
+       );
       }
     </script>
   </body>
