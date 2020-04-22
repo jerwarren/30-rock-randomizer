@@ -13,6 +13,13 @@
       img {
         max-width: 100%;
       }
+      .status {
+        display: none;
+      }
+
+      fieldset {
+        display: none;
+      }
     </style>
 
     <h1>30 Rock Randomizer</h1>
@@ -30,7 +37,7 @@
               onchange = "setSource('prime')" />
       <label for = "prime">Amazon Prime Video</label>
     </fieldset>
-    Redirecting...
+    <div class="status">Redirecting...</div>
     <script>   
 
       if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream){
@@ -66,7 +73,9 @@
         .then(episodes => pickEpisode(episodes, source));
       }
       
-      function pickEpisode(episodes, source){        
+      function pickEpisode(episodes, source){  
+        status = document.querySelector(".status"); 
+        status.innerHTML = "Redirecting...";
         switch(source) {
           case "hulu":
             prefix = "https://www.hulu.com/watch/";
