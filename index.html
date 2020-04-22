@@ -41,7 +41,6 @@
       if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream){
         selector = document.querySelector("fieldset");
         selector.setAttribute("style","display:none");
-        document.querySelector("#prime").setAttribute("checked","checked");
         source = setSource("prime");
       }
       
@@ -56,6 +55,8 @@
         }
       } else {
         console.log("not in app");
+        selector = document.querySelector("fieldset");
+        selector.setAttribute("style","display:none");
       }
     
       if('serviceWorker' in navigator) {
