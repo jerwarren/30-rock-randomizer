@@ -3,8 +3,8 @@
   "short_name": "30 Rock",
   "start_url": "",
   "display": "standalone",
-  "theme_color": "#ffffff",
-  "background_color":"#ffffff",
+  "theme_color": "#000000",
+  "background_color":"#000000",
   "icons": [
     {
       "src": "30-rock-splash.png",
