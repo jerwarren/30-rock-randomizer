@@ -50,8 +50,10 @@
         console.log("in app");
         if (localStorage.getItem("source") !== null){
           source = localStorage.getItem("source");
-          console.log(source);
           fetchEpisodes(source);
+        } else {
+          selector = document.querySelector("fieldset");
+          selector.setAttribute("style","display:block");
         }
       } else {
         selector = document.querySelector("fieldset");
@@ -65,7 +67,7 @@
       function setSource(source) {
         localStorage.setItem("source",source);
         console.log("setting: "+source);
-        return source;
+        fetchEpisodes(source);
       }
       
       function fetchEpisodes(source){
