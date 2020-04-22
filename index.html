@@ -33,7 +33,7 @@
       url.innerHTML = window.location.href;
       
       if (window.location.search == "?app=true"){
-        var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+        var iOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
         if (iOS){
           window.location.href = "hulu://www.hulu.com"+item;
         } else {
