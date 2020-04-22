@@ -49,12 +49,7 @@
       }
       
       function setSource(source) {
-        if (localStorage.getItem("source") === null){
-          source = document.querySelector("[checked]").getAttribute("value");
-          localStorage.setItem("source",source);
-        } else {
-          source = localStorage.getItem("source");
-        }
+        localStorage.setItem("source",source);
         return source;
       }
       
