@@ -16,8 +16,8 @@
       link = document.querySelector("#link");
       link.href = redirectUrl;
       
-      //if (window.location.search == "?app=true")
-      //window.location.href = "https://www.hulu.com"+item;
+      if (window.location.search == "?app=true")
+      window.location.href = "https://www.hulu.com"+item;
     
       if('serviceWorker' in navigator) {
       navigator.serviceWorker.register('sw.js');
