@@ -78,8 +78,10 @@
       function fetchEpisodes(source){
         fetch(source+'.json')
         .then(response => response.json())
-        .then(episodes => 
-        console.log(episodes);
+        .then(episodes => pickEpisode(episodes, source));
+      }
+      
+      function pickEpisode(episodes, source){        
         switch(source) {
           case "hulu":
             prefix = "https://www.hulu.com/watch/";
@@ -93,6 +95,7 @@
         redirectUrl = prefix+item;
         console.log(redirectUrl);
        );
+        
       }
     </script>
   </body>
