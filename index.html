@@ -38,8 +38,10 @@
       }
       
       if (window.location.search == "?app=true"){
+        console.log("in app";
         if (!localStorage.getItem("source") === null){
           source = localStorage.getItem("source");
+          console.log(source);
           fetchEpisodes(source);
         }
       }
@@ -50,6 +52,7 @@
       
       function setSource(source) {
         localStorage.setItem("source",source);
+        console.log("setting: "+source);
         return source;
       }
       
