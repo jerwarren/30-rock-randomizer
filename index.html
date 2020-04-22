@@ -28,9 +28,8 @@
     <br><br>
     
     You can "install" this page as an app in Chrome, Edge, Firefox on desktop, as well as on Android and iOS to enable automatic redirection to a random episode.
-    <br>
-    (Hulu on iOS doesn't support deep-linking, however, so iOS is limited to Amazon Prime Video.)
     <br><br>
+    (Hulu on iOS doesn't support deep-linking, however, so iOS is limited to Amazon Prime Video.)
 
     <h3>Edge</h3>
     <img src="edge.jpg">
@@ -53,6 +52,9 @@
           console.log(source);
           fetchEpisodes(source);
         }
+      } else {
+        selector = document.querySelector("fieldset");
+        selector.setAttribute("style","display:none");
       }
     
       if('serviceWorker' in navigator) {
